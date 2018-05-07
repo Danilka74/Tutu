@@ -1,0 +1,11 @@
+<%= form_with model: @station do |f|%>
+
+  <p>  
+    <%= f.label :title %> <br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.submit "#{ @train.new_record? ? 'Создать' : 'Изменить'}" %> 
+  </p>
+
+<%end%>

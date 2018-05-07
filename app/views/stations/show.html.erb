@@ -1,0 +1,20 @@
+<h1>Созданная станция</h1>
+
+  <p>
+    <strong>Название</strong>
+    <%= @station.title %>
+  </p>
+
+<% if @station.routes.empty? %>
+  <p>Станция не входит ни в один маршрут</p>
+<% else %> 
+  <p>Станция входит в следующие маршруты:</p>
+  <ul>
+    <% @station.routes.each do |route| %>
+      <li><%= route.name %></li>
+    <% end %>
+  </ul>
+<% end %>     
+
+<%= link_to 'Назад', stations_path %>
+<%= link_to 'Редактировать', edit_station_path(@station) %>

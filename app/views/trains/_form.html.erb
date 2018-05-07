@@ -1,0 +1,18 @@
+<%= form_with model: @train do |f| %>
+  
+  <p>
+    <%= f.label :number, "Номер"%><br>
+    <%= f.text_field :number %>
+  </p>
+
+  <p>
+    <%= f.label :current_station, "Текущая станция" %>
+    <%= f.collection_select :current_station_id, Station.all, :id, :title %>
+                      <!-- какоеполесвязывать  список всех значений  отправленноезначение  какое поле отображать -->
+  </p>
+
+  <p>
+    <%= f.submit 'Создать'%>
+  </p>
+
+<%end%>
